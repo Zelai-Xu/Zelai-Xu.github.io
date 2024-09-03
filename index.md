@@ -1,5 +1,6 @@
 # Zelai Xu 
-*Ph.D Candidate in University of British Columbia*
+*Ph.D Candidate in University of British Columbia*\
+*A researcher on soft matter and fluid mechanics*
 
 ---
 
@@ -45,8 +46,8 @@ Outstanding Graduates, University of Science and Technology of China (2020)
 ---
 
 ## Publication
-1. **Xu, Z.**; Yue, P.; Feng, J. J. Hystereses in Flow-Induced Compression of a Poroelastic Hydrogel. [Soft Matter](https://doi.org/10.1039/D4SM00678J) 2024, 10.1039.D4SM00678J.
-2. **Xu, Z.**; Yue, P.; Feng, J. J. Estimating the Interfacial Permeability for Flow into a Poroelastic Medium. [Soft Matter](https://doi.org/10.1039/D4SM00476K) 2024, 10.1039.D4SM00476K.
+1. **Xu, Z.**; Yue, P.; Feng, J. J. Hystereses in Flow-Induced Compression of a Poroelastic Hydrogel. [Soft Matter](https://doi.org/10.1039/D4SM00678J) 2024,  Published Online. 
+2. **Xu, Z.**; Yue, P.; Feng, J. J. Estimating the Interfacial Permeability for Flow into a Poroelastic Medium. [Soft Matter](https://doi.org/10.1039/D4SM00476K) 2024, Published Online. (Featured "Soft Matter Recent HOT Articles")
 3. **Xu, Z.**; Yue, P.; Feng, J. J. A Theory of Hydrogel Mechanics That Couples Swelling and External Flow. [Soft Matter](https://doi.org/10.1039/D4SM00424H) 2024, 20 (27), 5389–5406.
 4. **Xu, Z.**; Zhang, J.; Young, Y.-N.; Yue, P.; Feng, J. J. Comparison of Four Boundary Conditions for the Fluid-Hydrogel Interface. [Phys. Rev. Fluids](https://doi.org/10.1103/PhysRevFluids.7.093301) 2022, 7 (9), 093301.
 5. **Xu, Z.**; Yue, P.; Feng, J. J. Poroelastic Modelling Reveals the Cooperation between Two Mechanisms for Albuminuria. [J. R. Soc. Interface](https://doi.org/10.1098/rsif.2022.0634). 2023, 20 (198), 20220634.
