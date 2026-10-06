@@ -1,180 +1,1247 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Academic Profile of Zelai Xu">
-    <title>Zelai Xu</title>
+
+    <meta name="description"
+          content="Academic homepage of Zelai Xu, postdoctoral researcher at École Normale Supérieure, Paris. Research in soft matter, fluid mechanics, computational mechanics, hydrogels, rheology, and biophysical modelling.">
+
+    <meta name="author" content="Zelai Xu">
+
+    <title>Zelai Xu | Researcher in Soft Matter and Computational Mechanics</title>
+
     <style>
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
+
+        :root {
+            --navy: #18324a;
+            --navy-light: #274b69;
+            --text: #26323d;
+            --text-light: #5d6872;
+            --border: #dfe5e9;
+            --background: #f5f7f9;
+            --white: #ffffff;
+            --accent: #326b91;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+            font-size: 16px;
+            line-height: 1.65;
+            color: var(--text);
+            background: var(--background);
         }
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 12px 0;
-            text-align: left;
-            font-size: 12px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        h1{
-            color: white;
-        }
-        section {
-            margin: 20px auto;
-            padding: 20px;
-            max-width: 1000px;
-            background-color: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        h2, h3 {
-            color: #2c3e50;
-        }
-        .contact-info {
-            list-style-type: none;
-            padding: 0;
-        }
-        .contact-info li {
-            margin-bottom: 10px;
-        }
-        .research-interests {
-            background-color: #ecf0f1;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        .profile-photo {
-            float: left;
-            margin-right: 20px;
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-        }
-        footer {
-            text-align: center;
-            padding: 1px;
-            background-color: #2c3e50;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+
         a {
-            color: #2980b9;
+            color: var(--accent);
             text-decoration: none;
         }
-        .clear {
-            clear: both;
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+            background: var(--navy);
+            color: var(--white);
+            border-bottom: 4px solid #d8a84e;
+        }
+
+        .header-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 28px 35px 24px 35px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .site-title {
+            margin: 0;
+            color: var(--white);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 30px;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+
+        .site-subtitle {
+            margin: 4px 0 0 0;
+            color: #d8e2ea;
+            font-size: 15px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 18px;
+        }
+
+        nav a {
+            color: #ffffff;
+            font-size: 14px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        nav a:hover {
+            color: #e6c16a;
+            text-decoration: none;
+        }
+
+        /* =========================================================
+           MAIN LAYOUT
+        ========================================================= */
+
+        .page {
+            max-width: 1180px;
+            margin: 38px auto 70px auto;
+            padding: 0 35px;
+
+            display: grid;
+            grid-template-columns: 270px minmax(0, 1fr);
+            gap: 48px;
+        }
+
+        /* =========================================================
+           SIDEBAR
+        ========================================================= */
+
+        .sidebar {
+            align-self: start;
+            position: sticky;
+            top: 30px;
+        }
+
+        .profile-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 25px 22px;
+        }
+
+        .profile-photo {
+            display: block;
+            width: 165px;
+            height: 165px;
+            margin: 0 auto 20px auto;
+
+            object-fit: cover;
+            border-radius: 50%;
+
+            border: 5px solid #eef2f5;
+        }
+
+        .profile-name {
+            margin: 0;
+            text-align: center;
+
+            color: var(--navy);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .profile-position {
+            margin: 6px 0 20px 0;
+            text-align: center;
+
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .sidebar-divider {
+            border: 0;
+            border-top: 1px solid var(--border);
+            margin: 18px 0;
+        }
+
+        .contact-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact-list li {
+            margin: 9px 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .contact-label {
+            display: block;
+            color: var(--text-light);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+        }
+
+        /* =========================================================
+           CONTENT
+        ========================================================= */
+
+        main {
+            min-width: 0;
+        }
+
+        section {
+            margin-bottom: 48px;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            margin: 0 0 20px 0;
+            padding-bottom: 8px;
+
+            color: var(--navy);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 25px;
+            font-weight: 500;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        h3 {
+            margin: 0 0 5px 0;
+            color: var(--navy);
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 0 0 15px 0;
+        }
+
+        .intro {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .research-statement {
+            margin-top: 22px;
+            padding: 18px 22px;
+
+            background: #f0f4f7;
+            border-left: 4px solid var(--accent);
+
+            font-size: 15.5px;
+            line-height: 1.75;
+        }
+
+        /* =========================================================
+           ACADEMIC TIMELINES
+        ========================================================= */
+
+        .academic-item {
+            display: grid;
+            grid-template-columns: 135px minmax(0, 1fr);
+            gap: 25px;
+
+            padding: 14px 0;
+            border-bottom: 1px solid #edf0f2;
+        }
+
+        .academic-item:last-child {
+            border-bottom: none;
+        }
+
+        .academic-date {
+            color: var(--text-light);
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .academic-title {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .academic-institution {
+            color: var(--text-light);
+        }
+
+        .dissertation {
+            margin-top: 6px;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* =========================================================
+           RESEARCH AREAS
+        ========================================================= */
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .research-item {
+            padding: 20px;
+
+            background: var(--white);
+            border: 1px solid var(--border);
+        }
+
+        .research-item p {
+            margin: 7px 0 0 0;
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.65;
+        }
+
+        .keywords {
+            margin-top: 9px;
+            color: var(--accent);
+            font-size: 13px;
+        }
+
+        /* =========================================================
+           PUBLICATIONS
+        ========================================================= */
+
+        .publication-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .publication {
+            margin-bottom: 22px;
+            padding-left: 22px;
+
+            border-left: 2px solid #dce4e9;
+        }
+
+        .publication:last-child {
+            margin-bottom: 0;
+        }
+
+        .publication-title {
+            margin-bottom: 3px;
+            color: var(--text);
+            font-size: 15.5px;
+            line-height: 1.55;
+        }
+
+        .publication-journal {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .publication-note {
+            display: inline-block;
+            margin-left: 5px;
+            padding: 1px 7px;
+
+            color: #6d531c;
+            background: #f5ecd7;
+
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+
+        /* =========================================================
+           LISTS
+        ========================================================= */
+
+        .simple-list {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .simple-list li {
+            margin-bottom: 9px;
+        }
+
+        .presentation-list li {
+            margin-bottom: 12px;
+        }
+
+        .year {
+            color: var(--text-light);
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            margin-top: 50px;
+            padding: 24px 35px;
+
+            background: var(--navy);
+            color: #cbd6de;
+
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* =========================================================
+           RESPONSIVE DESIGN
+        ========================================================= */
+
+        @media (max-width: 850px) {
+
+            .header-inner {
+                display: block;
+            }
+
+            nav {
+                margin-top: 18px;
+                justify-content: flex-start;
+            }
+
+            .page {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .profile-card {
+                max-width: 500px;
+            }
+
+            .profile-photo {
+                width: 140px;
+                height: 140px;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .header-inner,
+            .page {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .site-title {
+                font-size: 26px;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .academic-item {
+                grid-template-columns: 1fr;
+                gap: 3px;
+            }
+
+            .academic-date {
+                font-size: 13px;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>   Zelai Xu's Home Page</h1>
-    </header>
+<!-- =============================================================
+     HEADER
+============================================================= -->
 
-    <section>
-        <h2>About Me</h2>
-        <!-- Insert your photo in the src attribute below -->
-        <img src="photo.jpg" alt="Zelai's Photo" class="profile-photo">
-        <p>Hello, I am Zelai. My research focuses on soft matter and fluid mechanics by numerical simulation.</p>
-        <div class="clear"></div>
-        
-        <h2>Contact Information</h2>
-        <ul class="contact-info">
-            <li>Email: <a href="mailto:zxu@bio.ens.psl.eu">zxu@bio.ens.psl.eu</a></li>
-        </ul>
+<header>
+    <div class="header-inner">
 
-        <h2 id="education">Education</h2>
-        <table style="width:100%; border-spacing: 0 5px;">
-            <tr>
-                <td>B.S. Lanzhou University</td>
-                <td style="text-align: right;">2013-2017</td>
-            </tr>
-            <tr></tr>
-            <tr>
-                <td>M.Eng. University of Science and Technology of China</td>
-                <td style="text-align: right;">2017-2020</td>
-            </tr>
-            <tr>
-                <td colspan="2"><strong>Dissertation</strong>: Numerical Study on the Interfacial Flow Caused by Temperature/Concentration Gradient</td>
-            </tr>
-            <tr></tr>
-            <tr style="padding-top: 10px;">
-                <td>Ph.D. University of British Columbia</td>
-                <td style="text-align: right;">2021-2024</td>
-            </tr>
-            <tr>
-                <td colspan="2"><strong>Dissertation</strong>: Mechanics of Hydrogels in Flow Fields</td>
-            </tr>
-        </table>
-
-        <h2>Positions</h2>
-        <table style="width:100%; border-spacing: 0 5px;">
-            <tr>
-                <td>Post-doctoral researcher in École Normale Supérieure de Paris </td>
-                <td style="text-align: right;">2025-Now</td>
-            </tr>
-        </table>
-        <h2>Research Interests</h2>
-        <div class="research-interests">
-            <ul>
-              <li>Numerical Simulation on Multi-Phase Flow<br>
-              <em>Key words: diffuse interface method, Maragoni effect, moving contact line</em></li>
-              <li>The Interaction between Hydrogel and Surrounding Fluid<br>
-              <em>Key words: poroelastic model, interfacial phenomena, swelling, hysteresis phenomena, biophysics</em></li>
-            </ul>
+        <div>
+            <h1 class="site-title">Zelai Xu</h1>
+            <p class="site-subtitle">
+                Postdoctoral Researcher · École Normale Supérieure, Paris
+            </p>
         </div>
 
-        <h2 id="teaching">Teaching</h2>
-        <p><strong>CHBE 352</strong> Transport Phenomena II, Teaching Assistant<br>
-        <strong>APSC 183</strong> Matter and Energy II, Teaching Assistant</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#education">Education</a>
+            <a href="#publications">Publications</a>
+            <a href="#presentations">Presentations</a>
+            <a href="#teaching">Teaching</a>
+        </nav>
 
-        <h2 id="award">Awards</h2>
-        <p>Faculty of Applied Science Graduate Award, University of British Columbia (2021)<br>
-        Excellent Master's Thesis, Anhui Society of Theoretical and Applied Mechanics (2021)<br>
-        Outstanding Graduates, University of Science and Technology of China (2020)</p>
+    </div>
+</header>
 
-        <h2 id="presentations">Presentations</h2>
-        <ul>
-            <li>Dec 2025, <em>Oral Presentation</em>, 17th FREEFEM days, Paris, France</li>
-            <li>November 2024, <em>Oral Presentation</em>, APS Division of Fluid Dynamics, Salt Lake City, United States</li>
-            <li>July 2024, <em>Oral Presentation</em>, 16th World Congress on Computational Mechanics and 4th Pan American Congress on Computational Mechanics, Vancouver, Canada</li>
-            <li>November 2023, <em>Oral Presentation</em>, APS Division of Fluid Dynamics, Washington, DC, United States</li>
-            <li>July 2023, <em>Invited Talk</em>, Chinese University of Hong Kong, Shenzhen, China</li>
-            <li>May 2023, <em>Oral Presentation</em>, 8th Pacific Rim Conference on Rheology, Vancouver, Canada</li>
-            <li>Feb 2023, <em>Oral Presentation</em>, CHBE (Chemical and Biological Engineering) research day at UBC, Vancouver, Canada</li>
-            <li>Oct 2022, <em>Oral Presentation</em>, 72nd Canadian Chemical Engineering Conference, Vancouver, Canada</li>
-            <li>Jun 2022, <em>Poster Presentation</em>, Frontiers in Biophysics, Vancouver, Canada</li>
-            <li>Oct 2021, <em>Oral Presentation</em>, 71st Canadian Chemical Engineering Conference, Montreal (online), Canada</li>
-            <li>Nov 2019, <em>Oral Presentation</em>, APS Division of Fluid Dynamics, Seattle, United States</li>
-            <li>Aug 2019, <em>Oral Presentation</em>, Chinese Congress of Theoretical and Applied Mechanics, Hangzhou, China</li>
-        </ul>
 
-        <h2>Publications</h2>
-        <ul>
-            <li><strong>Xu, Z.</strong>; Feng, J. J. A model for hydrogel-based bioprinting <a href="https://doi.org/10.1063/5.0320025">Appl. Phys. Lett.</a>, 2026, 128, 132701. </li>
-            <li><strong>Xu, Z.</strong>; Feng, J. J. A structural model for yielding and degelation of colloidal gels. <a href="https://doi.org/10.1122/8.0000978">J. Rheol.</a>, 2025, 69, 1067–1085.(Featured Article, Highlighted in AIP Scilight) </li>
-            <li><strong>Xu, Z.</strong>; Yue, P.; Feng, J. J. Hystereses in Flow-Induced Compression of a Poroelastic Hydrogel. <a href="https://doi.org/10.1039/D4SM00678J">Soft Matter</a>, 2024, 20 (35), 6940-6951.</li>
-            <li><strong>Xu, Z.</strong>; Yue, P.; Feng, J. J. Estimating the Interfacial Permeability for Flow into a Poroelastic Medium. <a href="https://doi.org/10.1039/D4SM00476K">Soft Matter</a>, 2024, 20 (37), 7357-7361. (Featured "Soft Matter Recent HOT Articles")</li>
-            <li><strong>Xu, Z.</strong>; Yue, P.; Feng, J. J. A Theory of Hydrogel Mechanics That Couples Swelling and External Flow. <a href="https://doi.org/10.1039/D4SM00424H">Soft Matter</a>, 2024, 20 (27), 5389–5406.</li>
-            <li><strong>Xu, Z.</strong>; Zhang, J.; Young, Y.-N.; Yue, P.; Feng, J. J. Comparison of Four Boundary Conditions for the Fluid-Hydrogel Interface. <a href="https://doi.org/10.1103/PhysRevFluids.7.093301">Phys. Rev. Fluids</a>, 2022, 7 (9), 093301.</li>
-            <li><strong>Xu, Z.</strong>; Yue, P.; Feng, J. J. Poroelastic Modelling Reveals the Cooperation between Two Mechanisms for Albuminuria. <a href="https://doi.org/10.1098/rsif.2022.0634">J. R. Soc. Interface</a>, 2023, 20 (198), 20220634.</li>
-            <li><strong>Xu, Z.-L.#</strong>; Chen, J.-Y.#; Liu, H.-R.; Sahu, K. C.; Ding, H. Motion of Self-Rewetting Drop on a Substrate with a Constant Temperature Gradient. <a href="https://doi.org/10.1017/jfm.2021.130">J. Fluid Mech.</a>, 2021, 915, A116.</li>
-            <li>Li, L.; Zhang, J.; <strong>Xu, Z.</strong>; Young, Y.-N.; Feng, J. J.; Yue, P. An Arbitrary Lagrangian-Eulerian Method for Simulating Interfacial Dynamics between a Hydrogel and a Fluid. <a href="https://doi.org/10.1016/j.jcp.2021.110851">Journal of Computational Physics</a>, 2022, 451, 110851.</li>
-            <li>Ma, Z.-Y.; Pan, X.-F.; <strong>Xu, Z.-L.</strong>; Yu, Z.-L.; Qin, B.; Yin, Y.-C.; Gao, Y.-C.; Yu, S.-H. Nanosheet-Coated Synthetic Wood with Enhanced Flame-Retardancy by Vacuum-Assisted Sonocoating Technique. <a href="https://doi.org/10.1007/s12274-022-4407-2">Nano Res.</a>, 2022.</li>
-            <li>Ma, Z.-Y.#; Yu, Z.-L.#; <strong>Xu, Z.-L.#</strong>; Bu, L.-F.; Liu, H.-R.; Zhu, Y.-B.; Qin, B.; Ma, T.; Zhan, H.-J.; Xu, L.; Wu, H.-A.; Ding, H.; Yu, S.-H. Origin of Batch Hydrothermal Fluid Behavior and Its Influence on Nanomaterial Synthesis. <a href="https://doi.org/10.1016/j.matt.2020.02.015">Matter</a>, 2020, 2 (5), 1270–1282.</li>
-            <p>(# co-first author)</p>
-        </ul>
-    </section>
+<!-- =============================================================
+     PAGE
+============================================================= -->
 
-    <footer>
-        <p>&copy; 2025 Zelai Xu</p>
-    </footer>
+<div class="page">
+
+    <!-- =========================================================
+         SIDEBAR
+    ========================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="profile-card">
+
+            <img
+                src="photo.jpg"
+                alt="Portrait of Zelai Xu"
+                class="profile-photo"
+            >
+
+            <h2 class="profile-name">Zelai Xu</h2>
+
+            <p class="profile-position">
+                Postdoctoral Researcher<br>
+                École Normale Supérieure<br>
+                Paris, France
+            </p>
+
+            <hr class="sidebar-divider">
+
+            <ul class="contact-list">
+
+                <li>
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:zxu@bio.ens.psl.eu">
+                        zxu@bio.ens.psl.eu
+                    </a>
+                </li>
+
+                <li>
+                    <span class="contact-label">Research</span>
+                    Soft matter · Fluid mechanics · Biophysics
+                </li>
+
+            </ul>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================================
+         MAIN CONTENT
+    ========================================================== -->
+
+    <main>
+
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
+
+        <section id="about">
+
+            <h2>About</h2>
+
+            <p class="intro">
+                I am a postdoctoral researcher at
+                <strong>École Normale Supérieure</strong> in Paris,
+                working at the interface of soft matter, fluid mechanics,
+                computational mechanics, and biophysics.
+            </p>
+
+            <p>
+                My research combines mathematical modelling, numerical
+                simulation, and continuum mechanics to investigate the
+                mechanics and dynamics of complex soft materials and
+                biological systems.
+            </p>
+
+            <div class="research-statement">
+                <strong>Research focus.</strong>
+                My research interests span multiphase flows, rheology,
+                poroelasticity, hydrogel mechanics, interfacial phenomena,
+                and biophysical modelling. I am particularly interested
+                in developing quantitative computational models that connect
+                microscopic or mesoscale mechanisms with observable
+                macroscopic dynamics.
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             RESEARCH
+        ====================================================== -->
+
+        <section id="research">
+
+            <h2>Research</h2>
+
+            <div class="research-grid">
+
+                <div class="research-item">
+
+                    <h3>Soft Matter and Complex Fluids</h3>
+
+                    <p>
+                        Mechanics and dynamics of soft and structured
+                        materials under deformation and flow.
+                    </p>
+
+                    <div class="keywords">
+                        Rheology · Yielding · Thixotropy · Gelation
+                    </div>
+
+                </div>
+
+
+                <div class="research-item">
+
+                    <h3>Hydrogel–Fluid Interactions</h3>
+
+                    <p>
+                        Coupled mechanics and transport in deformable,
+                        porous hydrogels interacting with surrounding fluids.
+                    </p>
+
+                    <div class="keywords">
+                        Poroelasticity · Swelling · Permeability ·
+                        Interfacial phenomena
+                    </div>
+
+                </div>
+
+
+                <div class="research-item">
+
+                    <h3>Computational Fluid Mechanics</h3>
+
+                    <p>
+                        Development and application of numerical methods
+                        for multiphase flows and moving interfaces.
+                    </p>
+
+                    <div class="keywords">
+                        FEM · ALE · Diffuse-interface methods ·
+                        Moving contact lines
+                    </div>
+
+                </div>
+
+
+                <div class="research-item">
+
+                    <h3>Biophysical Modelling</h3>
+
+                    <p>
+                        Mathematical and computational approaches to
+                        transport, signalling, and mechanics in biological
+                        systems.
+                    </p>
+
+                    <div class="keywords">
+                        Calcium signalling · Cellular dynamics ·
+                        Mathematical modelling
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             EDUCATION
+        ====================================================== -->
+
+        <section id="education">
+
+            <h2>Education</h2>
+
+            <div class="academic-item">
+
+                <div class="academic-date">
+                    2021–2024
+                </div>
+
+                <div>
+                    <div class="academic-title">
+                        Ph.D. in Chemical and Biological Engineering
+                    </div>
+
+                    <div class="academic-institution">
+                        University of British Columbia, Vancouver, Canada
+                    </div>
+
+                    <div class="dissertation">
+                        <strong>Dissertation:</strong>
+                        <em>Mechanics of Hydrogels in Flow Fields</em>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="academic-item">
+
+                <div class="academic-date">
+                    2017–2020
+                </div>
+
+                <div>
+                    <div class="academic-title">
+                        M.Eng.
+                    </div>
+
+                    <div class="academic-institution">
+                        University of Science and Technology of China
+                    </div>
+
+                    <div class="dissertation">
+                        <strong>Dissertation:</strong>
+                        <em>
+                            Numerical Study on the Interfacial Flow Caused
+                            by Temperature/Concentration Gradient
+                        </em>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="academic-item">
+
+                <div class="academic-date">
+                    2013–2017
+                </div>
+
+                <div>
+                    <div class="academic-title">
+                        B.S. in Mechanics
+                    </div>
+
+                    <div class="academic-institution">
+                        Lanzhou University
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ACADEMIC POSITION
+        ====================================================== -->
+
+        <section id="positions">
+
+            <h2>Academic Position</h2>
+
+            <div class="academic-item">
+
+                <div class="academic-date">
+                    2025–present
+                </div>
+
+                <div>
+
+                    <div class="academic-title">
+                        Postdoctoral Researcher
+                    </div>
+
+                    <div class="academic-institution">
+                        École Normale Supérieure, Paris, France
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PUBLICATIONS
+        ====================================================== -->
+
+        <section id="publications">
+
+            <h2>Publications</h2>
+
+            <ol class="publication-list">
+
+                <li class="publication">
+
+                    <div class="publication-title">
+                        <strong>Xu, Z.</strong>; Feng, J. J.
+                        A model for hydrogel-based bioprinting.
+                    </div>
+
+                    <div class="publication-journal">
+                        <em>Applied Physics Letters</em>, 2026,
+                        128, 132701.
+                        <a href="https://doi.org/10.1063/5.0320025"
+                           target="_blank">
+                            DOI
+                        </a>
+                    </div>
+
+                </li>
+
+
+                <li class="publication">
+
+                    <div class="publication-title">
+                        <strong>Xu, Z.</strong>; Feng, J. J.
+                        A structural model for yielding and degelation
+                        of colloidal gels.
+                    </div>
+
+                    <div class="publication-journal">
+                        <em>Journal of Rheology</em>, 2025,
+                        69, 1067–1085.
+                        <span class="publication-note">
+                            Featured Article
+                        </span>
+                        <span class="publication-note">
+                            AIP Scilight
+                        </span>
+                        <a href="https://doi.org/10.1122/8.0000978"
+                           target="_blank">
+                            DOI
+                        </a>
+                    </div>
+
+                </li>
+
+
+                <li class="publication">
+
+                    <div class="publication-title">
+                        <strong>Xu, Z.</strong>; Yue, P.; Feng, J. J.
+                        Hystereses in Flow-Induced Compression of a
+                        Poroelastic Hydrogel.
+                    </div>
+
+                    <div class="publication-journal">
+                        <em>Soft Matter</em>, 2024,
+                        20 (35), 6940–6951.
+                        <a href="https://doi.org/10.1039/D4SM00678J"
+                           target="_blank">
+                            DOI
+                        </a>
+                    </div>
+
+                </li>
+
+
+                <li class="publication">
+
+                    <div class="publication-title">
+                        <strong>Xu, Z.</strong>; Yue, P.; Feng, J. J.
+                        Estimating the Interfacial Permeability for Flow
+                        into a Poroelastic Medium.
+                    </div>
+
+                    <div class="publication-journal">
+                        <em>Soft Matter</em>, 2024,
+                        20 (37), 7357–7361.
+                        <span class="publication-note">
+                            Recent HOT Article
+                        </span>
+                        <a href="https://doi.org/10.1039/D4SM00476K"
+                           target="_blank">
+                            DOI
+                        </a>
+                    </div>
+
+                </li>
+
+
+                <li class="publication">
+
+                    <div class="publication-title">
+                        <strong>Xu, Z.</strong>; Yue, P.; Feng, J. J.
+                        A Theory of Hydrogel Mechanics That Couples
+                        Swelling and External Flow.
+                    </div>
+
+                    <div class="publication-journal">
+                        <em>Soft Matter</em>, 2024,
+                        20 (27), 5389–5406.
+                        <a href="https://doi.org/10.1039/D4SM00424H"
+                           target="_blank">
+                            DOI
+                        </a>
+                    </div>
+
+                </li>
+
+
+                <li class="publication">
+
+                    <div class="publication-title">
+                        <strong>Xu, Z.</strong>; Zhang, J.; Young, Y.-N.;
+                        Yue, P.; Feng, J. J.
+                        Comparison of Four Boundary Conditions for the
+                        Fluid-Hydrogel Interface.
+                    </div>
+
+                    <div class="publication-journal">
+                        <em>Physical Review Fluids</em>, 2022,
+                        7 (9), 093301.
+                        <a href="https://doi.org/10.1103/PhysRevFluids.7.093301"
+                           target="_blank">
+                            DOI
+                        </a>
+                    </div>
+
+                </li>
+
+
+                <li class="publication">
+
+                    <div class="publication-title">
+                        <strong>Xu, Z.</strong>; Yue, P.; Feng, J. J.
+                        Poroelastic Modelling Reveals the Cooperation
+                        between Two Mechanisms for Albuminuria.
+                    </div>
+
+                    <div class="publication-journal">
+                        <em>Journal of the Royal Society Interface</em>,
+                        2023, 20 (198), 20220634.
+                        <a href="https://doi.org/10.1098/rsif.2022.0634"
+                           target="_blank">
+                            DOI
+                        </a>
+                    </div>
+
+                </li>
+
+
+                <li class="publication">
+
+                    <div class="publication-title">
+                        <strong>Xu, Z.-L.<sup>#</sup></strong>;
+                        Chen, J.-Y.<sup>#</sup>; Liu, H.-R.;
+                        Sahu, K. C.; Ding, H.
+                        Motion of Self-Rewetting Drop on a Substrate
+                        with a Constant Temperature Gradient.
+                    </div>
+
+                    <div class="publication-journal">
+                        <em>Journal of Fluid Mechanics</em>, 2021,
+                        915, A116.
+                        <a href="https://doi.org/10.1017/jfm.2021.130"
+                           target="_blank">
+                            DOI
+                        </a>
+                    </div>
+
+                </li>
+
+
+                <li class="publication">
+
+                    <div class="publication-title">
+                        Li, L.; Zhang, J.; <strong>Xu, Z.</strong>;
+                        Young, Y.-N.; Feng, J. J.; Yue, P.
+                        An Arbitrary Lagrangian-Eulerian Method for
+                        Simulating Interfacial Dynamics between a
+                        Hydrogel and a Fluid.
+                    </div>
+
+                    <div class="publication-journal">
+                        <em>Journal of Computational Physics</em>, 2022,
+                        451, 110851.
+                        <a href="https://doi.org/10.1016/j.jcp.2021.110851"
+                           target="_blank">
+                            DOI
+                        </a>
+                    </div>
+
+                </li>
+
+
+                <li class="publication">
+
+                    <div class="publication-title">
+                        Ma, Z.-Y.; Pan, X.-F.; <strong>Xu, Z.-L.</strong>;
+                        Yu, Z.-L.; Qin, B.; Yin, Y.-C.; Gao, Y.-C.;
+                        Yu, S.-H.
+                        Nanosheet-Coated Synthetic Wood with Enhanced
+                        Flame-Retardancy by Vacuum-Assisted Sonocoating
+                        Technique.
+                    </div>
+
+                    <div class="publication-journal">
+                        <em>Nano Research</em>, 2022.
+                        <a href="https://doi.org/10.1007/s12274-022-4407-2"
+                           target="_blank">
+                            DOI
+                        </a>
+                    </div>
+
+                </li>
+
+
+                <li class="publication">
+
+                    <div class="publication-title">
+                        Ma, Z.-Y.<sup>#</sup>; Yu, Z.-L.<sup>#</sup>;
+                        <strong>Xu, Z.-L.<sup>#</sup></strong>;
+                        Bu, L.-F.; Liu, H.-R.; Zhu, Y.-B.; Qin, B.;
+                        Ma, T.; Zhan, H.-J.; Xu, L.; Wu, H.-A.;
+                        Ding, H.; Yu, S.-H.
+                        Origin of Batch Hydrothermal Fluid Behavior and
+                        Its Influence on Nanomaterial Synthesis.
+                    </div>
+
+                    <div class="publication-journal">
+                        <em>Matter</em>, 2020,
+                        2 (5), 1270–1282.
+                        <a href="https://doi.org/10.1016/j.matt.2020.02.015"
+                           target="_blank">
+                            DOI
+                        </a>
+                    </div>
+
+                </li>
+
+            </ol>
+
+            <p style="margin-top: 18px; color: #68747d; font-size: 13px;">
+                <sup>#</sup> Co-first author.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================================
+             PRESENTATIONS
+        ====================================================== -->
+
+        <section id="presentations">
+
+            <h2>Selected Presentations</h2>
+
+            <ul class="simple-list presentation-list">
+
+                <li>
+                    <span class="year">Dec. 2025</span> —
+                    <strong>Oral Presentation</strong>,
+                    17th FreeFem Days, Paris, France.
+                </li>
+
+                <li>
+                    <span class="year">Nov. 2024</span> —
+                    <strong>Oral Presentation</strong>,
+                    APS Division of Fluid Dynamics,
+                    Salt Lake City, United States.
+                </li>
+
+                <li>
+                    <span class="year">Jul. 2024</span> —
+                    <strong>Oral Presentation</strong>,
+                    16th World Congress on Computational Mechanics
+                    and 4th Pan American Congress on Computational
+                    Mechanics, Vancouver, Canada.
+                </li>
+
+                <li>
+                    <span class="year">Nov. 2023</span> —
+                    <strong>Oral Presentation</strong>,
+                    APS Division of Fluid Dynamics,
+                    Washington, DC, United States.
+                </li>
+
+                <li>
+                    <span class="year">Jul. 2023</span> —
+                    <strong>Invited Talk</strong>,
+                    Chinese University of Hong Kong, Shenzhen, China.
+                </li>
+
+                <li>
+                    <span class="year">May 2023</span> —
+                    <strong>Oral Presentation</strong>,
+                    8th Pacific Rim Conference on Rheology,
+                    Vancouver, Canada.
+                </li>
+
+                <li>
+                    <span class="year">Feb. 2023</span> —
+                    <strong>Oral Presentation</strong>,
+                    CHBE Research Day, University of British Columbia,
+                    Vancouver, Canada.
+                </li>
+
+                <li>
+                    <span class="year">Oct. 2022</span> —
+                    <strong>Oral Presentation</strong>,
+                    72nd Canadian Chemical Engineering Conference,
+                    Vancouver, Canada.
+                </li>
+
+                <li>
+                    <span class="year">Jun. 2022</span> —
+                    <strong>Poster Presentation</strong>,
+                    Frontiers in Biophysics, Vancouver, Canada.
+                </li>
+
+                <li>
+                    <span class="year">Oct. 2021</span> —
+                    <strong>Oral Presentation</strong>,
+                    71st Canadian Chemical Engineering Conference,
+                    Montreal, Canada.
+                </li>
+
+                <li>
+                    <span class="year">Nov. 2019</span> —
+                    <strong>Oral Presentation</strong>,
+                    APS Division of Fluid Dynamics,
+                    Seattle, United States.
+                </li>
+
+                <li>
+                    <span class="year">Aug. 2019</span> —
+                    <strong>Oral Presentation</strong>,
+                    Chinese Congress of Theoretical and Applied Mechanics,
+                    Hangzhou, China.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- =====================================================
+             TEACHING
+        ====================================================== -->
+
+        <section id="teaching">
+
+            <h2>Teaching</h2>
+
+            <div class="academic-item">
+
+                <div class="academic-date">
+                    UBC
+                </div>
+
+                <div>
+
+                    <div class="academic-title">
+                        CHBE 352 — Transport Phenomena II
+                    </div>
+
+                    <div class="academic-institution">
+                        Teaching Assistant
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="academic-item">
+
+                <div class="academic-date">
+                    UBC
+                </div>
+
+                <div>
+
+                    <div class="academic-title">
+                        APSC 183 — Matter and Energy II
+                    </div>
+
+                    <div class="academic-institution">
+                        Teaching Assistant
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             AWARDS
+        ====================================================== -->
+
+        <section id="awards">
+
+            <h2>Honors and Awards</h2>
+
+            <ul class="simple-list">
+
+                <li>
+                    <strong>Faculty of Applied Science Graduate Award</strong>,
+                    University of British Columbia, 2021.
+                </li>
+
+                <li>
+                    <strong>Excellent Master's Thesis</strong>,
+                    Anhui Society of Theoretical and Applied Mechanics, 2021.
+                </li>
+
+                <li>
+                    <strong>Outstanding Graduates</strong>,
+                    University of Science and Technology of China, 2020.
+                </li>
+
+            </ul>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =============================================================
+     FOOTER
+============================================================= -->
+
+<footer>
+    © 2026 Zelai Xu · École Normale Supérieure, Paris
+</footer>
 
 </body>
 </html>
+```
